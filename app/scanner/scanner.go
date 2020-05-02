@@ -1,6 +1,6 @@
 package scanner
 
 type Scanner interface {
-	getData() string
-	takeData() string
+	GetData() string
+	TakeData() string
 }
