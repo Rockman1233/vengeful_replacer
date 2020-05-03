@@ -10,7 +10,7 @@ type StdinScanner struct {
 	message string
 }
 
-func (scn *StdinScanner) GetData() string {
+func (scn StdinScanner) GetData() string {
 	return scn.message
 }
 
