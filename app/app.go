@@ -1,9 +1,9 @@
 package app
 
-import "vengeful_replacer/app/scanner"
+import "vengeful_replacer/app/scanners"
 
 type Application struct {
-	scanner scanner.Scanner
+	scanner scanners.Scanner
 	//algorithm
 	//output
 }
