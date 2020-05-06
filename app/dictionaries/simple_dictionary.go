@@ -8,7 +8,7 @@ func (dic SimpleDictionary) getMap() map[string]string {
 	return dic.maintenance
 }
 
-func New() (SimpleDictionary, err) {
+func New() SimpleDictionary {
 
 	easyDict := map[string]string{
 		"а": "а", // cyrillic:latin
@@ -23,5 +23,5 @@ func New() (SimpleDictionary, err) {
 
 	newEntity := SimpleDictionary{maintenance: easyDict}
 
-	return newEntity, err
+	return newEntity
 }
