@@ -16,7 +16,7 @@ func (alg EmptyAlgorithm) GetResult() string {
 	return alg.result
 }
 
-func New(data string) EmptyAlgorithm {
+func NewEmptyAlgorithm(data string) EmptyAlgorithm {
 	newEntity := EmptyAlgorithm{data: data}
 	newEntity.Run()
 	return newEntity

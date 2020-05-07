@@ -14,7 +14,7 @@ func (scn StdinScanner) GetData() string {
 	return scn.message
 }
 
-func New(file os.File) (StdinScanner, error) {
+func NewStdinScanner(file os.File) (StdinScanner, error) {
 
 	newEntity := StdinScanner{file: file}
 
