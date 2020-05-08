@@ -1,5 +1,5 @@
 package dictionaries
 
 type Dictionary interface {
-	getMap() map[string]string
+	GetMap() map[string]string
 }
