@@ -1,6 +1,7 @@
 package config
 
 import (
+	"errors"
 	"go/scanner"
 	"vengeful_replacer/app/algorithms"
 	"vengeful_replacer/app/dictionaries"
@@ -12,26 +13,26 @@ type Config struct {
 	scanner   scanner.Scanner
 }
 
-func New(params ...interface{}) (Config, err) {
+func New(params ...interface{}) (Config, error) {
 
 	newEntity := Config{}
 
 	for _, val := range params {
-		switch val.(type) {
+		switch entity := val.(type) {
 		case dictionaries.Dictionary:
-			newEntity.dict = val
+			newEntity.dict = entity
 			break
 		case scanner.Scanner:
-			newEntity.scanner = val
+			newEntity.scanner = entity
 			break
 		case algorithms.Algorithm:
-			newEntity.algorithm = val
+			newEntity.algorithm = entity
 			break
 		default:
-
+			return newEntity, errors.New("half-full config")
 		}
 	}
 
-	return newEntity, err
+	return newEntity, nil
 
 }
