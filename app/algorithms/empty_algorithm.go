@@ -51,15 +51,15 @@ func changeChar(runeChar rune, dict dictionaries.Dictionary) rune {
 	return 0
 }
 
-func (alg EmptyAlgorithm) GetResult() string {
+func (alg *EmptyAlgorithm) GetResult() string {
 	return alg.result
 }
 
-func (alg EmptyAlgorithm) SetDictionary(dictionary dictionaries.Dictionary) {
+func (alg *EmptyAlgorithm) SetDictionary(dictionary dictionaries.Dictionary) {
 	alg.dictionary = dictionary
 }
 
-func (alg EmptyAlgorithm) SetData(data string) error {
+func (alg *EmptyAlgorithm) SetData(data string) {
 	alg.data = data
 }
 

@@ -15,7 +15,7 @@ func (scn StdinScanner) GetData() string {
 	return scn.message
 }
 
-func (scn StdinScanner) SetSource(file os.File) error {
+func (scn *StdinScanner) SetSource(file os.File) error {
 
 	scn.file = file
 
