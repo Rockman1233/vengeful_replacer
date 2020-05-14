@@ -55,8 +55,15 @@ func (alg EmptyAlgorithm) GetResult() string {
 	return alg.result
 }
 
-func NewEmptyAlgorithm(data string, dictionary dictionaries.Dictionary) EmptyAlgorithm {
-	newEntity := EmptyAlgorithm{data: data, dictionary: dictionary}
-	newEntity.Run()
+func (alg EmptyAlgorithm) SetDictionary(dictionary dictionaries.Dictionary) {
+	alg.dictionary = dictionary
+}
+
+func (alg EmptyAlgorithm) SetData(data string) error {
+	alg.data = data
+}
+
+func NewEmptyAlgorithm() EmptyAlgorithm {
+	newEntity := EmptyAlgorithm{}
 	return newEntity
 }

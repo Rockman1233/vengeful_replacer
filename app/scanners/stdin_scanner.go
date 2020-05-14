@@ -2,6 +2,7 @@ package scanners
 
 import (
 	"bufio"
+	"errors"
 	"os"
 )
 
@@ -14,20 +15,28 @@ func (scn StdinScanner) GetData() string {
 	return scn.message
 }
 
-func NewStdinScanner(file os.File) (StdinScanner, error) {
+func (scn StdinScanner) SetSource(file os.File) error {
 
-	newEntity := StdinScanner{file: file}
+	scn.file = file
 
 	_, err := file.Stat()
 
 	// If empty data or error of reading
 	if err != nil {
-		return newEntity, err
+		return errors.New("empty source")
 	}
 
 	bufioScanner := bufio.NewScanner(&file)
 	bufioScanner.Scan()
-	newEntity.message = bufioScanner.Text()
 
-	return newEntity, nil
+	scn.message = bufioScanner.Text()
+
+	return nil
+}
+
+func NewStdinScanner() StdinScanner {
+
+	newEntity := StdinScanner{}
+
+	return newEntity
 }
