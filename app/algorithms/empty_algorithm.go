@@ -51,7 +51,7 @@ func changeChar(runeChar rune, dict dictionaries.Dictionary) rune {
 	return 0
 }
 
-func (alg *EmptyAlgorithm) GetResult() string {
+func (alg EmptyAlgorithm) GetResult() string {
 	return alg.result
 }
 
