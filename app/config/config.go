@@ -34,5 +34,4 @@ func New(params ...interface{}) (Config, error) {
 	}
 
 	return newEntity, nil
-
 }

@@ -1,14 +1,27 @@
 package app
 
-import "vengeful_replacer/app/scanners"
+import (
+	"vengeful_replacer/app/config"
+)
 
 type Application struct {
-	scanner scanners.Scanner
-	//algorithm
-	//output
+	config config.Config
 }
 
-func New() (Application, error) {
+func (app *Application) Run() {
+	algorithm := app.config.Algorithm
+	dictionary := app.config.Dictionary
+	scanner := app.config.Scanner
 
-	return Application{}, nil
+	algorithm.SetDictionary(dictionary)
+	algorithm.SetData(scanner.GetData())
+	algorithm.Run()
+}
+
+func (app Application) GetResult() string {
+	return app.config.Algorithm.GetResult()
+}
+
+func New(config config.Config) Application {
+	return Application{config: config}
 }
