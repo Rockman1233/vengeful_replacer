@@ -34,9 +34,9 @@ func (scn *StdinScanner) SetSource(file os.File) error {
 	return nil
 }
 
-func NewStdinScanner() StdinScanner {
+func NewStdinScanner() *StdinScanner {
 
 	newEntity := StdinScanner{}
 
-	return newEntity
+	return &newEntity
 }

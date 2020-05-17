@@ -63,7 +63,9 @@ func (alg *EmptyAlgorithm) SetData(data string) {
 	alg.data = data
 }
 
-func NewEmptyAlgorithm() EmptyAlgorithm {
+func NewEmptyAlgorithm() *EmptyAlgorithm {
+
 	newEntity := EmptyAlgorithm{}
-	return newEntity
+
+	return &newEntity
 }
