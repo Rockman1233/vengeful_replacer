@@ -6,5 +6,5 @@ type Algorithm interface {
 	Run()
 	GetResult() string
 	SetDictionary(dictionary dictionaries.Dictionary)
-	SetData(string)
+	SetData(data string)
 }
