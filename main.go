@@ -12,21 +12,29 @@ import (
 
 func main() {
 
-	fmt.Print("insert y value here: ")
+	fmt.Print("insert value here: ")
 
+	// Get data from stdin
 	newEntityOfScanner := scanners.NewStdinScanner()
 	err := newEntityOfScanner.SetSource(*os.Stdin)
+
+	// Implement dictionary and algorithm
 	newEntityOfDictionary := dictionaries.NewSimpleDictionary()
 	newEntityOfAlgorithm := algorithms.NewEmptyAlgorithm()
 
+	// Load data to config
 	configEntity, err := config.New(newEntityOfScanner, newEntityOfAlgorithm, newEntityOfDictionary)
+
+	// Load config to data
 	appEntity := app.New(configEntity)
 
+	// Run application
 	appEntity.Run()
 
 	if err != nil {
 		panic(err)
 	}
 
+	// Get result
 	fmt.Println(appEntity.GetResult())
 }
