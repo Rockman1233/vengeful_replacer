@@ -1,4 +1,4 @@
-# Vengeful Replacer
+# The Vengeful Replacer
 
 Utility for swapping symbols in the string
 
