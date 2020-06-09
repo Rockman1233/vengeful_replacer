@@ -7,7 +7,7 @@ v.1.0.0 - gets string from stdin and returns swaped version
 
 ## Getting Started
 
-Just clone repo to your local machine:
+Just clone the repo to your local machine:
 ```
 git clone https://github.com/Rockman1233/vengeful_replacer
 ```
